@@ -1,0 +1,270 @@
+/*
+Theme Name: Doctors Theme
+Version: 0.1.0
+Text Domain: doctors-theme
+*/
+
+:root {
+	--dt-bg: #f6f7fb;
+	--dt-card: #ffffff;
+	--dt-text: #14161a;
+	--dt-muted: rgba(20, 22, 26, 0.68);
+	--dt-border: rgba(20, 22, 26, 0.12);
+	--dt-accent: #1b6dff;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	background: var(--dt-bg);
+	color: var(--dt-text);
+}
+
+a {
+	color: var(--dt-accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.dt-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 24px 16px;
+}
+
+.dt-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.dt-title {
+	margin: 0;
+	font-size: 28px;
+	letter-spacing: -0.02em;
+}
+
+.dt-filters {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	background: rgba(255, 255, 255, 0.7);
+	border: 1px solid var(--dt-border);
+	border-radius: 16px;
+	padding: 14px;
+	margin-bottom: 18px;
+	backdrop-filter: blur(10px);
+}
+
+.dt-filters__row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+}
+
+.dt-filters label {
+	display: grid;
+	gap: 6px;
+	font-size: 13px;
+	color: var(--dt-muted);
+}
+
+.dt-filters select {
+	width: 100%;
+	height: 40px;
+	border-radius: 12px;
+	border: 1px solid var(--dt-border);
+	padding: 0 12px;
+	background: #fff;
+}
+
+.dt-filters__actions {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.dt-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	height: 40px;
+	padding: 0 14px;
+	border-radius: 12px;
+	border: 1px solid var(--dt-border);
+	background: #fff;
+	color: var(--dt-text);
+	cursor: pointer;
+}
+
+.dt-button--primary {
+	background: var(--dt-accent);
+	color: #fff;
+	border-color: transparent;
+}
+
+.dt-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 14px;
+}
+
+.dt-card {
+	background: var(--dt-card);
+	border: 1px solid var(--dt-border);
+	border-radius: 18px;
+	box-shadow: 0 16px 28px rgba(20, 22, 26, 0.06);
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 96px 1fr;
+	gap: 12px;
+	padding: 12px;
+}
+
+.dt-card__thumb {
+	width: 96px;
+	height: 96px;
+	border-radius: 14px;
+	background: rgba(20, 22, 26, 0.06);
+	overflow: hidden;
+}
+
+.dt-card__thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.dt-card__title {
+	margin: 0 0 6px;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+}
+
+.dt-card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 10px;
+	color: var(--dt-muted);
+	font-size: 13px;
+}
+
+.dt-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 10px;
+	border-radius: 999px;
+	background: rgba(27, 109, 255, 0.08);
+	color: #1148aa;
+	font-size: 12px;
+}
+
+.dt-pagination {
+	margin-top: 18px;
+	display: flex;
+	justify-content: center;
+}
+
+.dt-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 38px;
+	height: 38px;
+	padding: 0 10px;
+	border: 1px solid var(--dt-border);
+	border-radius: 12px;
+	margin: 0 4px;
+	background: #fff;
+	color: var(--dt-text);
+}
+
+.dt-pagination .page-numbers.current {
+	background: var(--dt-accent);
+	color: #fff;
+	border-color: transparent;
+}
+
+.dt-single {
+	display: grid;
+	gap: 16px;
+}
+
+.dt-single__hero {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 14px;
+	background: #fff;
+	border: 1px solid var(--dt-border);
+	border-radius: 18px;
+	padding: 16px;
+}
+
+.dt-single__thumb {
+	width: 100%;
+	max-width: 320px;
+	aspect-ratio: 1 / 1;
+	border-radius: 18px;
+	overflow: hidden;
+	background: rgba(20, 22, 26, 0.06);
+}
+
+.dt-single__thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.dt-single__facts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.dt-single__content {
+	background: #fff;
+	border: 1px solid var(--dt-border);
+	border-radius: 18px;
+	padding: 16px;
+}
+
+@media (min-width: 720px) {
+	.dt-filters__row {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.dt-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.dt-single__hero {
+		grid-template-columns: 320px 1fr;
+		align-items: start;
+	}
+}
+
+@media (min-width: 1024px) {
+	.dt-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.dt-card {
+		grid-template-columns: 1fr;
+	}
+
+	.dt-card__thumb {
+		width: 100%;
+		height: 180px;
+	}
+}
