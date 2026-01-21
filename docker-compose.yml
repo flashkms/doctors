@@ -32,24 +32,6 @@ services:
       - wp_data:/var/www/html
       - ./wp-content:/var/www/html/wp-content
 
-  wpcli:
-    image: wordpress:cli-php8.2
-    profiles: ["cli"]
-    depends_on:
-      db:
-        condition: service_healthy
-      wordpress:
-        condition: service_started
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: ${MYSQL_USER}
-      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
-      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
-    volumes:
-      - wp_data:/var/www/html
-      - ./wp-content:/var/www/html/wp-content
-    entrypoint: ["wp", "--path=/var/www/html"]
-
 volumes:
   db_data:
   wp_data:
