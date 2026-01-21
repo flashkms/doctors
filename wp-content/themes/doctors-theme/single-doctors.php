@@ -19,6 +19,13 @@ $archive_url = get_post_type_archive_link( 'doctors' );
 				<div class="dt-single__thumb">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<?php the_post_thumbnail( 'medium_large' ); ?>
+					<?php else : ?>
+						<span class="dt-thumb-placeholder" aria-hidden="true">
+							<svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+								<path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2-8 4.5V21h16v-2.5c0-2.5-3.58-4.5-8-4.5Z" fill="currentColor"/>
+							</svg>
+						</span>
+						<span class="screen-reader-text"><?php esc_html_e( 'Без фото', 'doctors-theme' ); ?></span>
 					<?php endif; ?>
 				</div>
 
