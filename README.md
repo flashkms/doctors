@@ -26,21 +26,6 @@ docker compose up -d
 - Активировать плагин **Doctors CPT**
 - Активировать тему **Doctors Theme**
 
-### Быстрая установка через WP-CLI (опционально)
-```bash
-docker compose --profile cli run --rm wpcli core install \\
-  --url=http://localhost:8080 \\
-  --title=\"WP Doctors Test\" \\
-  --admin_user=admin \\
-  --admin_password=admin \\
-  --admin_email=admin@example.com \\
-  --skip-email
-
-docker compose --profile cli run --rm wpcli plugin activate doctors-cpt
-docker compose --profile cli run --rm wpcli theme activate doctors-theme
-docker compose --profile cli run --rm wpcli eval \"doctors_cpt_generate_demo_data(20);\"
-```
-
 ## Генерация демо‑данных
 Админка → **Tools → Generate Doctors Demo** → кнопка «Создать 20 докторов».
 
